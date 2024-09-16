@@ -1,4 +1,4 @@
-package com.leetcode.samples;
+package com.dsa.leetcode.samples;
 
 public class RemoveElementFromArray {
 
