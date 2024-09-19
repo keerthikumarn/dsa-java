@@ -1,7 +1,8 @@
 package com.dsa.leetcode.samples;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 public class MostFrequentElementsInArray {
 
@@ -10,22 +11,22 @@ public class MostFrequentElementsInArray {
 		System.out.println(topKFrequent(nums, 2));
 	}
 
-	private static Object[] topKFrequent(int[] nums, int k) {
-		List<Integer> elementsWithMaxFrequent = new ArrayList<>();
-		int maxFreqCount = 0;
-		for (int iRow = 0; iRow < k; iRow++) {
-			int tempCount = 0;
-			for (int jRow = 0; jRow < k; jRow++) {
-				if (nums[iRow] == nums[jRow]) {
-					tempCount++;
-				}
-				if (tempCount > maxFreqCount) {
-					maxFreqCount = tempCount;
-					elementsWithMaxFrequent.add(nums[iRow]);
-				}
-			}
+	private static int[] topKFrequent(int[] nums, int k) {
+		Map<Integer, Integer> heap = new HashMap<>();
+		for (int num : nums) {
+			heap.put(num, heap.getOrDefault(num, 0) + 1);
 		}
-		return elementsWithMaxFrequent.toArray();
+		// PriorityQueue to store the k most frequent elements
+		PriorityQueue<Map.Entry<Integer, Integer>> maxHeap = new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
+		// Add all elements from the heap to the max heap
+		for (Map.Entry<Integer, Integer> entry : heap.entrySet()) {
+			maxHeap.offer(entry);
+		}
+		int[] resultArr = new int[k];
+		for (int idx = 0; idx < k; idx++) {
+			resultArr[idx] = maxHeap.poll().getKey();
+		}
+		return resultArr;
 	}
 
 }
