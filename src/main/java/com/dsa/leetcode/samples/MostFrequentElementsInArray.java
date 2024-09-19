@@ -8,7 +8,7 @@ public class MostFrequentElementsInArray {
 
 	public static void main(String[] args) {
 		int[] nums = { 1, 2, 2, 3, 3, 3 };
-		System.out.println(topKFrequent(nums, 2));
+		System.out.println(topKFrequent(nums, 1));
 	}
 
 	private static int[] topKFrequent(int[] nums, int k) {
