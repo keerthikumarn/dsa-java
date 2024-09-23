@@ -8,6 +8,8 @@ public class ValidParanthesis {
 		System.out.println(isValid("()"));
 		System.out.println(isValid("()[]{}"));
 		System.out.println(isValid("(}"));
+		System.out.println(isValid("([{}])")); 
+		System.out.println(isValid("[(])"));
 	}
 
 	private static boolean isValid(String str) {
