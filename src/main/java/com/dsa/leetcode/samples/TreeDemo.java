@@ -18,6 +18,9 @@ public class TreeDemo {
 		TreeDemo.preOrder(rootNode);
 		TreeDemo.inOrder(rootNode);
 		TreeDemo.postOrder(rootNode);
+		System.out.println(search(rootNode, 10) != null
+                ? "Found"
+                : "Not Found");
 	}
 
 	private static void insert(int data) {
@@ -46,6 +49,16 @@ public class TreeDemo {
 				}
 			}
 		}
+	}
+
+	private static TreeNode search(TreeNode rootNode, int data) {
+		if (rootNode == null || rootNode.val == data) {
+			return rootNode;
+		}
+		if (rootNode.val < data) {
+			return search(rootNode.right, data);
+		}
+		return search(rootNode.left, data);
 	}
 
 	private static void preOrder(TreeNode rootNode) {
