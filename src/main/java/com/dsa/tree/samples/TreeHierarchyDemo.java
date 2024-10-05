@@ -24,6 +24,7 @@ public class TreeHierarchyDemo {
 		devManager.addChildNode(dev2);
 		qaManager.addChildNode(qa1);
 		qaManager.addChildNode(qa2);
+		ceoNode.showTreeNodes();
 	}
 
 }
