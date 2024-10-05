@@ -16,6 +16,10 @@ public class MyTreeNode {
 	public void addChildNode(MyTreeNode childNode) {
 		childNodes.add(childNode);
 	}
+	
+	public void showTreeNodes() {
+	    TreeNodesDisplay.printNodes(this);
+	  }
 
 	public String getValue() {
 		return value;
