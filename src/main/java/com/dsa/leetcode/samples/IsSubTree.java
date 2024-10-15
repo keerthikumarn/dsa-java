@@ -28,6 +28,6 @@ public class IsSubTree {
             return isSameTree(root.left, subRoot.left) && isSameTree(root.right, subRoot.right);
         }
         return false;
-    }}
+    }
 
 }
