@@ -2,13 +2,13 @@ package com.dsa.leetcode.samples;
 
 public class ClimbStairs {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println(climbStairs(2));
 		System.out.println(climbStairs(3));
 		System.out.println(climbStairs(5));
-	}
+	}*/
 
-	private static int climbStairs(int n) {
+	public int climbStairs(int n) {
 		if (n == 0 || n == 1) {
 			return 1;
 		}
