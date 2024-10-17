@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class AnagramCheck {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println(isAnagram("racecar", "carrace"));
-	}
+	}*/
 
-	private static boolean isAnagram(String s, String t) {
+	public boolean isAnagram(String s, String t) {
 		boolean isAnagram = false;
 		String str1 = getSortedString(s);
 		String str2 = getSortedString(t);
@@ -18,7 +18,7 @@ public class AnagramCheck {
 		return isAnagram;
 	}
 
-	private static String getSortedString(String s) {
+	private String getSortedString(String s) {
 		char tempArr[] = s.toCharArray();
 		Arrays.sort(tempArr);
 		return new String(tempArr);
