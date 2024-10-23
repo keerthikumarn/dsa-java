@@ -33,5 +33,10 @@ public class TwoIntegerSum {
 		}
 		return new int[0];
 	}
+	
+	// HashMap approach
+	private static int[] twoSumTwoPointerApproach(int[] nums, int target) {
+		
+	}
 
 }
