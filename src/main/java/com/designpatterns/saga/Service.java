@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public abstract class Service<G> implements OrchestrationChapter<G> {
 
-	protected static final Logger logger = LoggerFactory.getLogger(Service.class);
+	private static final Logger logger = LoggerFactory.getLogger(Service.class);
 
 	@Override
 	public abstract String getName();
