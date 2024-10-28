@@ -33,6 +33,22 @@ public class TwoIntegerSum {
 		}
 		return new int[0];
 	}
-	
+
+	// Two Pointer Approach
+	private static int[] twoSumTwoPointerApproach(int[] numbers, int target) {
+		int leftPtr = 0;
+		int rightPtr = numbers.length - 1;
+		while (leftPtr < rightPtr) {
+			int targetSum = numbers[leftPtr] + numbers[rightPtr];
+			if (targetSum > target) {
+				rightPtr--;
+			} else if (targetSum < target) {
+				leftPtr++;
+			} else {
+				return new int[] { leftPtr + 1, rightPtr + 1 };
+			}
+		}
+		return new int[0];
+	}
 
 }
