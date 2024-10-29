@@ -7,9 +7,9 @@ public class JumpingOnClouds {
 	}
 
 	private static int jumpingOnClouds(int[] c, int k) {
-		int index = 0;
-		int len = c.length;
 		int energyLevel = 100;
+		int len = c.length;
+		int index = 0;
 		do {
 			index = (index + k) % len;
 			energyLevel--;
