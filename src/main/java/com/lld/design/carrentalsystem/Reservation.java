@@ -3,7 +3,9 @@ package com.lld.design.carrentalsystem;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-//@Slf4j
+import lombok.Data;
+
+@Data
 public class Reservation {
 
 	private final String reservationId;
