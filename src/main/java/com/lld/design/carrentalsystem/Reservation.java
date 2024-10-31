@@ -3,9 +3,7 @@ package com.lld.design.carrentalsystem;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
+//@Slf4j
 public class Reservation {
 
 	private final String reservationId;
@@ -27,6 +25,6 @@ public class Reservation {
 
 	private double calculateTotalPrice() {
 		long daysRented = ChronoUnit.DAYS.between(startDate, endDate) + 1;
-		return car.getRentalPricePerDay() * daysRented;
+		return car.getRentPerDay() * daysRented;
 	}
 }
