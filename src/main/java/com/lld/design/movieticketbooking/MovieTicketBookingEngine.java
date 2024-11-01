@@ -78,6 +78,14 @@ public class MovieTicketBookingEngine {
 		}
 	}
 
+	public synchronized void cancelBooking(String bookingId) {
+		Booking booking = bookings.get(bookingId);
+		if (booking != null && booking.getStatus() != BookingStatus.CANCELLED) {
+			booking.setStatus(BookingStatus.CANCELLED);
+			markSeatsAsAvailable(booking.getShow(), booking.getSeats());
+		}
+	}
+
 	private double calculateTotalPrice(List<Seat> selectedSeats) {
 		return selectedSeats.stream().mapToDouble(Seat::getPrice).sum();
 	}
@@ -104,6 +112,13 @@ public class MovieTicketBookingEngine {
 			}
 		}
 		return areSeatsAvailable;
+	}
+
+	private void markSeatsAsAvailable(Show show, List<Seat> seats) {
+		for (Seat seat : seats) {
+			Seat showSeat = show.getSeats().get(seat.getId());
+			showSeat.setStatus(SeatStatus.AVAILABLE);
+		}
 	}
 
 }
