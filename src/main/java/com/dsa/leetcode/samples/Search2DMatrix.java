@@ -11,6 +11,7 @@ public class Search2DMatrix {
 		for (int rows = 0; rows < matrix.length; rows++) {
 			for (int cols = 0; cols < matrix[rows].length; cols++) {
 				if (matrix[rows][cols] == target) {
+					System.out.println("Target element: " + target + " is found");
 					return true;
 				}
 			}
