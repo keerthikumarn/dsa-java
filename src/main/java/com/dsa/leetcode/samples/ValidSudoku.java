@@ -1,5 +1,8 @@
 package com.dsa.leetcode.samples;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class ValidSudoku {
 
 	public static void main(String[] args) {
@@ -29,5 +32,21 @@ public class ValidSudoku {
 		}
 		return true;
 	}
+	
+	private static boolean isValidSudokuHashSetApproach(char[][] board) {
+		Set<String> visited = new HashSet<>();
+		for (int iIndex = 0; iIndex < 9; iIndex++) {
+			for (int jIndex = 0; jIndex < 9; jIndex++) {
+				if(board[iIndex][jIndex] != '.') {
+					String box = "("+board[iIndex][jIndex]+")";
+					if(!visited.add(box + iIndex) ||!visited.add(jIndex + box) || !visited.add(iIndex/3 + box + jIndex/3)) {
+						return false;
+					}
+				}
+			}
+		}
+		return true;
+	}
+	
 
 }
