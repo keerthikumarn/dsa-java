@@ -3,7 +3,7 @@ package com.dsa.leetcode.samples;
 public class RotateImage {
 
 	public static void main(String[] args) {
-
+		
 	}
 
 	private static void rotate(int[][] matrix) {
