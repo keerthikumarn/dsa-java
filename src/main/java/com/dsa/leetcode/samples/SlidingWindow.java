@@ -9,10 +9,10 @@ public class SlidingWindow {
 	private static int maxSum(int arr[], int k) {
 		int maxSum = Integer.MIN_VALUE;
 		int len = arr.length;
-		for (int iIdx = 0; iIdx < len - k + 1; iIdx++) {
+		for (int leftPtr = 0; leftPtr < len - k + 1; leftPtr++) {
 			int currSum = 0;
-			for (int jIdx = 0; jIdx < k; jIdx++) {
-				currSum = currSum + arr[iIdx + jIdx];
+			for (int rightPtr = 0; rightPtr < k; rightPtr++) {
+				currSum = currSum + arr[leftPtr + rightPtr];
 			}
 			maxSum = Math.max(currSum, maxSum);
 		}
