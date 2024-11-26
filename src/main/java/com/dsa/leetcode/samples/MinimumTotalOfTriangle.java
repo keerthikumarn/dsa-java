@@ -14,12 +14,7 @@ public class MinimumTotalOfTriangle {
 
 	private static int minimumTotal(List<List<Integer>> triangle) {
 		int len = triangle.size();
-
 		int[] dp = IntStream.range(0, len).map(idx -> triangle.get(len - 1).get(idx)).toArray();
-		/*
-		 * int[] dp = new int[len]; for (int iIdx = 0; iIdx < len; iIdx++) { dp[iIdx] =
-		 * triangle.get(len - 1).get(iIdx); }
-		 */
 		for (int iIdx = len - 2; iIdx >= 0; iIdx--) {
 			for (int jIdx = 0; jIdx < triangle.get(iIdx).size(); jIdx++) {
 				dp[jIdx] = Math.min(dp[jIdx], dp[jIdx + 1]) + triangle.get(iIdx).get(jIdx);
