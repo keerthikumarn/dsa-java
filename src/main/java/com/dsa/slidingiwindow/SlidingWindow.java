@@ -4,6 +4,8 @@ public class SlidingWindow {
 
 	public static void main(String[] args) {
 		System.out.println(maxSum(new int[] { 100, 200, 300, 400 }, 2));
+		System.out.println(maxSum(new int[] { 1, 2, 3, 4, 5 }, 2));
+		System.out.println(maxSumSWApproach(new int[] { 1, 2, 3, 4, 5 }, 2));
 		System.out.println(maxSumSWApproach(new int[] { 100, 200, 300, 400 }, 2));
 		System.out.println(maxSumSWApproach(new int[] { 1, 4, 2, 10, 2, 3, 1, 0, 20 }, 4));
 	}
