@@ -20,6 +20,5 @@ public class MinimumSizeSubArray {
 			}
 		}
 		return minSum == Integer.MAX_VALUE ? 0 : minSum;
-		;
 	}
 }
