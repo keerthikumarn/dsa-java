@@ -7,18 +7,18 @@ public class MinimumSizeSubArray {
 	}
 
 	private static int minSum(int arr[], int S) {
-		int minSum = Integer.MAX_VALUE;
+		int minLength = Integer.MAX_VALUE;
 		int len = arr.length;
 		int currSum = 0;
 		int leftPtr = 0;
 		for (int rightPtr = 0; rightPtr < len; rightPtr++) {
-			currSum += currSum + arr[rightPtr];
+			currSum +=  arr[rightPtr];
 			while (currSum >= S) {
-				minSum = Math.min(minSum, rightPtr - leftPtr + 1);
+				minLength = Math.min(minLength, rightPtr - leftPtr + 1);
 				currSum -= arr[leftPtr];
-				leftPtr--;
+				leftPtr++;
 			}
 		}
-		return minSum == Integer.MAX_VALUE ? 0 : minSum;
+		return minLength == Integer.MAX_VALUE ? 0 : minLength;
 	}
 }
