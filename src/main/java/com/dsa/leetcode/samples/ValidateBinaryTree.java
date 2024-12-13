@@ -2,12 +2,8 @@ package com.dsa.leetcode.samples;
 
 public class ValidateBinaryTree {
 
-	public static void main(String[] args) {
-
-	}
-
 	public boolean isValidBST(TreeNode root) {
-		return dfs(root, 0, 0);
+		return dfs(root, null, null);
 	}
 
 	private boolean dfs(TreeNode node, Integer min, Integer max) {
