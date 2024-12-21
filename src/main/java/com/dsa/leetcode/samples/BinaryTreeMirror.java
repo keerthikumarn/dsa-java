@@ -15,6 +15,7 @@ public class BinaryTreeMirror {
 	}
 
 	private static void printTransformedTree(TreeNode root) {
+		/*printing the transformed/mirrored tree using preOrder traversal*/
 		if (root == null) {
 			return;
 		}
