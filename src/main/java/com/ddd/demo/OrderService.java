@@ -1,10 +1,16 @@
 package com.ddd.demo;
 
+import java.util.List;
+
 public class OrderService {
 	private final OrderRepository orderRepository;
 
 	public OrderService(OrderRepository orderRepository) {
 		this.orderRepository = orderRepository;
+	}
+	
+	public List<Order> getAllOrders(String customerId) {
+		return orderRepository.getAllOrders(customerId);
 	}
 
 	public String createOrder(String customerId) {
