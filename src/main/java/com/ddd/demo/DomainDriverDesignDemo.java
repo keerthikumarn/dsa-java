@@ -13,7 +13,8 @@ public class DomainDriverDesignDemo {
 		// Add items to the order
 		orderService.addItemToOrder(orderId, "product-123", 2);
 		orderService.addItemToOrder(orderId, "product-678", 1);
-		System.out.println("Items added to the order.");
+		System.out.println("Items added to the order."
+				+ orderService.getAllOrders("customer-566").get(0).getCustomerId());
 
 		// Complete the order
 		orderService.completeOrder(orderId);
