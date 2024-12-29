@@ -2,17 +2,7 @@ package com.dsa.bst.demo;
 
 public class BSTDemo {
 
-	class Node {
-		int key;
-		Node left, right;
-
-		public Node(int item) {
-			key = item;
-			left = right = null;
-		}
-	}
-
-	Node root;
+	private Node root;
 
 	public BSTDemo() {
 		root = null;
