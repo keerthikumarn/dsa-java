@@ -22,10 +22,8 @@ public class CountBSTNodes {
         root.left.left = new Node(1);
         root.right.left = new Node(40);
         root.right.right = new Node(100);
-
         int low = 5;
         int high = 45;
-
         getBSTCount(root, low, high);
 	}
 
