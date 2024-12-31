@@ -2,7 +2,7 @@ package com.dsa.bst.demo;
 
 public class CheckIfTreeIsBST {
 
-	private Node root;
+	Node root;
 
 	public CheckIfTreeIsBST() {
 		this.root = null;
