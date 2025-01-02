@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class TestCountBSTNodes {
 
 	@Test
-	void testGetBSTCount_AllNodesWithinRange() {
+	void testGetBSTCountAllNodesWithinRange() {
 		Node root = new Node(10);
 		root.left = new Node(5);
 		root.right = new Node(50);
@@ -21,7 +21,7 @@ class TestCountBSTNodes {
 	}
 
 	@Test
-	void testGetBSTCount_SomeNodesWithinRange() {
+	void testGetBSTCountSomeNodesWithinRange() {
 		Node root = new Node(10);
 		root.left = new Node(5);
 		root.right = new Node(50);
@@ -35,7 +35,7 @@ class TestCountBSTNodes {
 	}
 
 	@Test
-	void testGetBSTCount_NoNodesWithinRange() {
+	void testGetBSTCountNoNodesWithinRange() {
 		Node root = new Node(10);
 		root.left = new Node(5);
 		root.right = new Node(50);
@@ -49,7 +49,7 @@ class TestCountBSTNodes {
 	}
 
 	@Test
-	void testGetBSTCount_EmptyTree() {
+	void testGetBSTCountEmptyTree() {
 		Node root = null;
 		int low = 1;
 		int high = 100;
@@ -58,7 +58,7 @@ class TestCountBSTNodes {
 	}
 
 	@Test
-	void testGetBSTCount_SingleNodeInRange() {
+	void testGetBSTCountSingleNodeInRange() {
 		Node root = new Node(10);
 		int low = 5;
 		int high = 15;
@@ -67,7 +67,7 @@ class TestCountBSTNodes {
 	}
 
 	@Test
-	void testGetBSTCount_SingleNodeOutOfRange() {
+	void testGetBSTCountSingleNodeOutOfRange() {
 		Node root = new Node(10);
 		int low = 20;
 		int high = 30;
