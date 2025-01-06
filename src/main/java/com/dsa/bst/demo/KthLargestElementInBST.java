@@ -2,8 +2,8 @@ package com.dsa.bst.demo;
 
 public class KthLargestElementInBST {
 	
-	private static int result = -1;
-	private static int count = 0;
+	protected static int result = -1;
+	protected static int count = 0;
 	
 	public static int kthLargest(Node root, int k) {
 		System.out.println("Invoking the kthLargest..");
