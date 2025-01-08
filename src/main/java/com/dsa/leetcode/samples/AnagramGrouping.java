@@ -9,11 +9,11 @@ import java.util.Map;
 public class AnagramGrouping {
 
 	public static void main(String[] args) {
-		String[] strs = { "act", "pots", "tops", "cat", "stop", "hat" };
-		System.out.println(groupAnagrams(strs));
+		//String[] strs = { "act", "pots", "tops", "cat", "stop", "hat" };
+		//System.out.println(groupAnagrams(strs));
 	}
 
-	private static List<List<String>> groupAnagrams(String[] strs) {
+	public List<List<String>> groupAnagrams(String[] strs) {
 		if (strs == null || strs.length == 0) {
 			return new ArrayList<>();
 		}
