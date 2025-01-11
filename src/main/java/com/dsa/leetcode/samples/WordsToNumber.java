@@ -67,7 +67,6 @@ public class WordsToNumber {
 		System.out.println(wordsToNumber("three hundred million"));
 		System.out.println(wordsToNumber("four hundred seven"));
 		System.out.println(wordsToNumber("one thousand nine hundred ninety seven"));
-		
 	}
 
 }
