@@ -9,7 +9,7 @@ public class ArrayToBST {
 		obj.preOrder(root);
 	}
 
-	public Node sortedArrayToBSTRecursion(int[] arr, int start, int end) {
+	private Node sortedArrayToBSTRecursion(int[] arr, int start, int end) {
 		if (start > end) {
 			return null;
 		}
@@ -20,7 +20,7 @@ public class ArrayToBST {
 		return root;
 	}
 
-	private Node sortedArrayToBST(int[] arr) {
+	public Node sortedArrayToBST(int[] arr) {
 		return sortedArrayToBSTRecursion(arr, 0, arr.length - 1);
 	}
 
