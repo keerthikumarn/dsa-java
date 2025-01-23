@@ -6,16 +6,25 @@ public class BigIntegerDemo {
 
 	public static void main(String[] args) {
 		BigInteger bigInt = new BigInteger("2300");
-		int num = 3;
-		BigInteger changedRightShift = bigInt.shiftRight(num);
-		String rightShiftValue = "After applying shiftRight by Shift Distance " + num + " on " + bigInt + " New Value is "
-				+ changedRightShift;
-		BigInteger changedLeftShift = bigInt.shiftLeft(num);
-		String leftShiftValue = "After applying shiftRight by Shift Distance " + num + " on " + bigInt + " New Value is "
-				+ changedLeftShift;
+		int num1 = 3;
+		int num2 = 1;
+		// Right shift
+		BigInteger changedRightShift = bigInt.shiftRight(num1);
+		String rightShiftValue = "After applying shiftRight by Shift Distance " + num1 + " on " + bigInt
+				+ " New Value is " + changedRightShift;
+
+		// Left shift
+		BigInteger changedLeftShift = bigInt.shiftLeft(num1);
+		String leftShiftValue = "After applying shiftRight by Shift Distance " + num1 + " on " + bigInt
+				+ " New Value is " + changedLeftShift;
+
+		// setBit
+		BigInteger changedSetBit = bigInt.setBit(num2);
+		String setBitValue = "After applying setBit at index " + num2 + " of " + bigInt + " New Value is " + changedSetBit;
 		
-		System.out.println("Value after Right Shift : "+rightShiftValue);
-		System.out.println("Value after Left Shift : "+leftShiftValue);
+		System.out.println("Value after Right Shift : " + rightShiftValue);
+		System.out.println("Value after Left Shift : " + leftShiftValue);
+		System.out.println("Value after setBit : " + setBitValue);
 	}
 
 }
