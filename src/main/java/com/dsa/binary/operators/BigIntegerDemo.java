@@ -10,7 +10,12 @@ public class BigIntegerDemo {
 		BigInteger changedRightShift = bigInt.shiftRight(num);
 		String rightShiftValue = "After applying shiftRight by Shift Distance " + num + " on " + bigInt + " New Value is "
 				+ changedRightShift;
-		System.out.println(rightShiftValue);
+		BigInteger changedLeftShift = bigInt.shiftLeft(num);
+		String leftShiftValue = "After applying shiftRight by Shift Distance " + num + " on " + bigInt + " New Value is "
+				+ changedLeftShift;
+		
+		System.out.println("Value after Right Shift : "+rightShiftValue);
+		System.out.println("Value after Left Shift : "+leftShiftValue);
 	}
 
 }
