@@ -20,11 +20,20 @@ public class BigIntegerDemo {
 
 		// setBit
 		BigInteger changedSetBit = bigInt.setBit(num2);
-		String setBitValue = "After applying setBit at index " + num2 + " of " + bigInt + " New Value is " + changedSetBit;
+		String setBitValue = "After applying setBit at index " + num2 + " of " + bigInt + " New Value is " 
+		+ changedSetBit;
+		
+		// Abs method
+		BigInteger absInteger = new BigInteger("-8800"); 
+        BigInteger absolutevalue = absInteger.abs(); 
+              
+        // Define result 
+        String absResult ="BigInteger "+absInteger+ " and Absolute value is "+absolutevalue; 
 		
 		System.out.println("Value after Right Shift : " + rightShiftValue);
 		System.out.println("Value after Left Shift : " + leftShiftValue);
 		System.out.println("Value after setBit : " + setBitValue);
+		System.out.println("Value after abs : " + absResult);
 	}
 
 }
