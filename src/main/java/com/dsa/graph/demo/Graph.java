@@ -22,11 +22,9 @@ public class Graph {
 		int adjListSize = graph.adjList.size();
 		System.out.println("The contents of the graph:");
 		while (srcVertex < adjListSize) {
-			for(Node edge : graph.adjList.get(srcVertex)) {
-				System.out.print("Vertex:" + srcVertex + " ==> " + edge.value + 
-                        " (" + edge.weight + ")\t");
+			for (Node edge : graph.adjList.get(srcVertex)) {
+				System.out.print("Vertex:" + srcVertex + " ==> " + edge.value + " (" + edge.weight + ")\t");
 			}
 		}
-
 	}
 }
