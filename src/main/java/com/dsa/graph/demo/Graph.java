@@ -25,6 +25,8 @@ public class Graph {
 			for (Node edge : graph.adjList.get(srcVertex)) {
 				System.out.print("Vertex:" + srcVertex + " ==> " + edge.value + " (" + edge.weight + ")\t");
 			}
+			System.out.println();
+			srcVertex++;
 		}
 	}
 }
