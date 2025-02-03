@@ -32,4 +32,9 @@ public class DeliveryData implements Subject {
 	public String getLocation() {
 		return "Dummy place - 1";
 	}
+
+	public void locationChanged() {
+		this.location = getLocation();
+		notifyObservers();
+	}
 }
