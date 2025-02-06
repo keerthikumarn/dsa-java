@@ -27,7 +27,7 @@ public class DetectCycleInUndirectedGraph {
 		}
 	}
 
-	private boolean isCycle(int vertex, List<List<Integer>> adj) {
+	public boolean isCycle(int vertex, List<List<Integer>> adj) {
 		boolean visited[] = new boolean[vertex];
 		Arrays.fill(visited, false);
 		int[] parent = new int[vertex];
@@ -43,19 +43,19 @@ public class DetectCycleInUndirectedGraph {
 	}
 
 	private boolean checkForCycle(List<List<Integer>> adj, int idx, boolean[] visited, int[] parent) {
-		Queue<GraphNode> queue = new LinkedList<>(); // BFS
-		queue.add(new GraphNode(idx, -1));
+		Queue<Node> queue = new LinkedList<>(); // BFS
+		queue.add(new Node(idx, -1));
 		visited[idx] = true;
 		while (!queue.isEmpty()) {
 			// source node and its parent node
-			int node = queue.peek().first;
-			int par = queue.peek().second;
+			int node = queue.peek().value;
+			int par = queue.peek().weight;
 			queue.remove();
 
 			// go to all the adjacent nodes
 			for (Integer it : adj.get(node)) {
 				if (visited[it] == false) {
-					queue.add(new GraphNode(it, node));
+					queue.add(new Node(it, node));
 					visited[it] = true;
 				}
 				// if adjacent node is visited and is not its own parent node
@@ -69,7 +69,7 @@ public class DetectCycleInUndirectedGraph {
 
 }
 
-class GraphNode {
+/*class GraphNode {
 	int first;
 	int second;
 
@@ -77,4 +77,4 @@ class GraphNode {
 		this.first = first;
 		this.second = second;
 	}
-}
+}*/
