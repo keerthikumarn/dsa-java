@@ -1,7 +1,5 @@
 package com.lld.design.concertbooking;
 
-package concertbookingsystem;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
