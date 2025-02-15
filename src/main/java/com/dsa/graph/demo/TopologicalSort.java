@@ -23,7 +23,7 @@ public class TopologicalSort {
 		}
 	}
 
-	private static void topologicalSort(Graph graph, int neighbour, Set<Integer> visited, Stack<Integer> stack) {
+	public static void topologicalSort(Graph graph, int neighbour, Set<Integer> visited, Stack<Integer> stack) {
 		if (visited.contains(neighbour)) {
 			return;
 		}
