@@ -9,13 +9,8 @@ import java.util.Set;
 
 public class FindIfPathExistsInGraph {
 
-	public static void main(String[] args) {
-
-	}
-
 	public boolean validPath(int n, int[][] edges, int source, int destination) {
 		Map<Integer, List<Integer>> graph = new HashMap<>();
-		// create an adjacency matrix
 		for (int[] edge : edges) {
 			int u = edge[0];
 			int v = edge[1];
@@ -27,7 +22,17 @@ public class FindIfPathExistsInGraph {
 	}
 
 	private boolean dfs(int source, int destination, Map<Integer, List<Integer>> graph, Set<Integer> visited) {
-		// TODO Auto-generated method stub
+		if (source == destination) {
+			return true;
+		}
+		visited.add(source);
+		for (int neighbour : graph.getOrDefault(source, new ArrayList<>())) {
+            if (!visited.contains(neighbour)) {
+                if (dfs(neighbour, destination, graph, visited)) {
+                    return true;
+                }
+            }
+		} 
 		return false;
 	}
 
