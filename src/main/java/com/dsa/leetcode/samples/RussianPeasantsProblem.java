@@ -3,10 +3,10 @@ package com.dsa.leetcode.samples;
 public class RussianPeasantsProblem {
 
 	public static void main(String[] args) {
-		System.out.println(russianPeasants(12, 15));
+		//System.out.println(russianPeasants(12, 15));
 	}
 
-	private static int russianPeasants(int a, int b) {
+	public int russianPeasants(int a, int b) {
 		int num1 = a;
 		int num2 = b;
 		int russianPeasants = 0;
