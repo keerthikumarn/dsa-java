@@ -10,13 +10,13 @@ public class MeetingProblem {
 
 	}
 
-	private static boolean canAttendMeetings(List<Interval> intervals) {
+	public boolean canAttendMeetings(List<Interval> intervals) {
 		// sort the intervals
 		Collections.sort(intervals, Comparator.comparingInt(interval -> interval.start));
 		for (int idx = 1; idx < intervals.size(); idx++) {
 			Interval interval1 = intervals.get(idx - 1);
 			Interval interval2 = intervals.get(idx);
-			if (interval1.start < interval2.start) {
+			if (interval1.end > interval2.start) {
 				return false;
 			}
 		}
