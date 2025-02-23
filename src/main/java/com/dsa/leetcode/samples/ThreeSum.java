@@ -11,12 +11,12 @@ import java.util.Set;
 public class ThreeSum {
 
 	public static void main(String[] args) {
-		List<List<Integer>> list = threeSum(new int[] { -1, 0, 1, 2, -1, -4 });
-		System.out.println(list.toString());
+		//List<List<Integer>> list = threeSum(new int[] { -1, 0, 1, 2, -1, -4 });
+		//System.out.println(list.toString());
 	}
 
 	/* Brute force approach */
-	private static List<List<Integer>> threeSum(int[] nums) {
+	public List<List<Integer>> threeSum(int[] nums) {
 		Set<List<Integer>> result = new HashSet<>();
 		// sort the nums
 		Arrays.sort(nums);
@@ -35,7 +35,7 @@ public class ThreeSum {
 	}
 
 	/* HashMap approach */
-	private static List<List<Integer>> threeSumHashMapApproach(int[] nums) {
+	public List<List<Integer>> threeSumHashMapApproach(int[] nums) {
 		Arrays.sort(nums);
 		Map<Integer, Integer> count = new HashMap<>();
 		for (int num : nums) {
