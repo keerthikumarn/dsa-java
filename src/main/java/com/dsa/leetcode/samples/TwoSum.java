@@ -6,11 +6,11 @@ import java.util.Map;
 public class TwoSum {
 
 	public static void main(String[] args) {
-		int[] num = { 3, 4, 5, 6 };
-		twoSum(num, 7);
+		//int[] num = { 3, 4, 5, 6 };
+		//twoSum(num, 7);
 	}
 
-	private static int[] twoSum(int[] nums, int target) {
+	public int[] twoSum(int[] nums, int target) {
 		Map<Integer, Integer> numMap = new HashMap<>();
 		for (int idx = 0; idx < nums.length; idx++) {
 			numMap.put(nums[idx], idx);
