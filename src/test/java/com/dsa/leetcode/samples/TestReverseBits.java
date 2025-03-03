@@ -9,7 +9,7 @@ class TestReverseBits {
 	@Test
 	void returnsReversedBitsForPositiveNumber() {
 		ReverseBits reverseBits = new ReverseBits();
-		assertEquals(1342177280, reverseBits.reverseBits(5)); // Corrected expected value
+		assertEquals(-1610612736, reverseBits.reverseBits(5)); // Corrected expected value
 	}
 
 	@Test
@@ -21,13 +21,13 @@ class TestReverseBits {
 	@Test
 	void returnsReversedBitsForNegativeNumber() {
 		ReverseBits reverseBits = new ReverseBits();
-		assertEquals(-1073741825, reverseBits.reverseBits(-5)); // Corrected expected value
+		assertEquals(-536870913, reverseBits.reverseBits(-5)); // Corrected expected value
 	}
 
 	@Test
 	void returnsReversedBitsForMaxInt() {
 		ReverseBits reverseBits = new ReverseBits();
-		assertEquals(-1, reverseBits.reverseBits(Integer.MAX_VALUE));
+		assertEquals(-2, reverseBits.reverseBits(Integer.MAX_VALUE));
 	}
 
 	@Test
