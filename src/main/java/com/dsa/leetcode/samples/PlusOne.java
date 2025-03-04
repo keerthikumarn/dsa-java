@@ -6,7 +6,7 @@ public class PlusOne {
 
 	}
 
-	private static int[] plusOne(int[] digits) {
+	public int[] plusOne(int[] digits) {
 		int len = digits.length;
 		// Start from the last digit and work backwards
 		for (int idx = len - 1; idx >= 0; idx--) {
