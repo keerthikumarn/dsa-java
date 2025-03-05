@@ -11,7 +11,7 @@ public class NumberOfIslands {
 		System.out.println(count);
 	}
 
-	private int numberOfIsland(int[][] graph) {
+	public int numberOfIsland(int[][] graph) {
 		boolean visited[][] = new boolean[graph.length][graph[0].length];
 		int count = 0;
 		for (int idx = 0; idx < graph.length; idx++) {
