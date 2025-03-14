@@ -32,7 +32,7 @@ public class NumberOfMatchingSubSeq {
 			if (nextIdx == -1) {
 				return false;
 			}
-			prevIdx = nextIdx;
+			prevIdx = idxList.get(nextIdx);
 		}
 		return true;
 	}
@@ -42,12 +42,12 @@ public class NumberOfMatchingSubSeq {
 		while (left < right) {
 			int mid = left + (right - left) / 2;
 			if (indices.get(mid) > prevIdx) {
-				right = mid;
+				right = mid - 1;
 			} else {
 				left = mid + 1;
 			}
 		}
-		return (left < indices.size()) ? left : -1;
+		return (left < indices.size()) ? indices.get(left) : -1;
 	}
 
 }
