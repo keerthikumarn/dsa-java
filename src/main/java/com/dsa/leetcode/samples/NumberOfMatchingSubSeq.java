@@ -47,7 +47,7 @@ public class NumberOfMatchingSubSeq {
 				left = mid + 1;
 			}
 		}
-		return (left < indices.size()) ? indices.get(left) : -1;
+		return (left < indices.size()) ? left : -1;
 	}
 
 }

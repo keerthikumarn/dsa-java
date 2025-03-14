@@ -16,7 +16,7 @@ class TestNumberOfMatchingSubSeq {
 
 	@Test
 	public void testBasicCases() {
-		assertEquals(4, counter.numMatchingSubseq("abcde", new String[] { "a", "bb", "acd", "ace" }));
+		assertEquals(3, counter.numMatchingSubseq("abcde", new String[] { "a", "bb", "acd", "ace" }));
 		assertEquals(2, counter.numMatchingSubseq("abcd", new String[] { "ab", "cd", "e" }));
 		assertEquals(0, counter.numMatchingSubseq("xyz", new String[] { "a", "b", "c" }));
 		assertEquals(3, counter.numMatchingSubseq("hello", new String[] { "h", "lo", "hello" }));
@@ -40,7 +40,7 @@ class TestNumberOfMatchingSubSeq {
 	public void testNonMatchingCases() {
 		assertEquals(0, counter.numMatchingSubseq("abcde", new String[] { "f", "gh", "ijk" }));
 		assertEquals(0, counter.numMatchingSubseq("xyz", new String[] { "abc", "pq", "rst" }));
-		assertEquals(1, counter.numMatchingSubseq("abc", new String[] { "acb", "bac", "cba" })); // Wrong order
+		assertEquals(0, counter.numMatchingSubseq("abc", new String[] { "acb", "bac", "cba" })); // Wrong order
 	}
 
 	@Test
