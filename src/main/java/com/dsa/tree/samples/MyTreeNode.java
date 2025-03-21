@@ -28,5 +28,9 @@ public class MyTreeNode {
 	public List<MyTreeNode> getChildNodes() {
 		return childNodes;
 	}
+	
+	public void setChildNodes(List<MyTreeNode> childNodes) {
+		this.childNodes = childNodes;
+	}
 
 }
