@@ -5,12 +5,12 @@ import java.util.Map;
 
 public class FindDuplicatesWithinK {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println(findDuplicatesWithinK(new int[] { 1, 2, 3, 1 }, 3));
 		System.out.println(findDuplicatesWithinK(new int[] { 4, 5, 6, 7 }, 3));
-	}
+	}*/
 
-	private static boolean findDuplicatesWithinK(int[] nums, int K) {
+	public boolean findDuplicatesWithinK(int[] nums, int K) {
 		Map<Integer, Integer> map = new HashMap<>();
 		int len = nums.length;
 		for (int idx = 0; idx < len; idx++) {
