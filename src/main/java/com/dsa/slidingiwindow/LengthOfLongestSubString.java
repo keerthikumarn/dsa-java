@@ -5,11 +5,11 @@ import java.util.Set;
 
 public class LengthOfLongestSubString {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println(lengthOfLongestSubString("keerthi"));
-	}
+	}*/
 
-	private static int lengthOfLongestSubString(String s) {
+	public int lengthOfLongestSubString(String s) {
 		int strLen = s.length();
 		if (strLen < 1) {
 			return 0;
