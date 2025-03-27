@@ -1,19 +1,17 @@
 package com.dsa.slidingiwindow;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class LongestRepeatingCharacterReplacement {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println(characterReplacement("XYYX", 2));
 		System.out.println(characterReplacementWithSW1("XYYX", 2));
-	}
+	}*/
 
 	/* Brute Force approach */
-	private static int characterReplacement(String s, int k) {
+	/*private static int characterReplacement(String s, int k) {
 		int resultingLen = 0;
 		int strLen = s.length();
 		for (int iIdx = 0; iIdx < strLen; iIdx++) {
@@ -28,10 +26,10 @@ public class LongestRepeatingCharacterReplacement {
 			}
 		}
 		return resultingLen;
-	}
+	}*/
 
 	/* Sliding Window Approach */
-	private static int characterReplacementWithSW1(String s, int k) {
+	public int characterReplacementWithSW1(String s, int k) {
 		int resultingLen = 0;
 		Set<Character> set = new HashSet<>();
 		// add all the chars to the array
