@@ -2,11 +2,11 @@ package com.dsa.slidingiwindow;
 
 public class MinimumSizeSubArray {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println(minSum(new int[] { 2, 3, 1, 2, 4, 3 }, 7));
-	}
+	}*/
 
-	private static int minSum(int arr[], int S) {
+	public int minSum(int arr[], int S) {
 		int minLength = Integer.MAX_VALUE;
 		int len = arr.length;
 		int currSum = 0;
