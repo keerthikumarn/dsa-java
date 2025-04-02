@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class PermutationInStrings {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println(checkInclusion("au", "eidbaooo"));
-	}
+	}*/
 
-	private static boolean checkInclusion(String s1, String s2) {
+	public boolean checkInclusion(String s1, String s2) {
 		if (s1.length() > s2.length()) {
 			return false;
 		}
@@ -22,8 +22,9 @@ public class PermutationInStrings {
 			s2Freq[s2.charAt(i) - 'a']++;
 		}
 		// Check initial window
-		if (Arrays.equals(s1Freq, s2Freq))
+		if (Arrays.equals(s1Freq, s2Freq)) {
 			return true;
+		}
 
 		// Slide the window over s2
 		for (int idx = s1.length(); idx < s2.length(); idx++) {
