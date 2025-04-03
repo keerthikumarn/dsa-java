@@ -5,11 +5,7 @@ import java.util.Map;
 
 public class MaxFruitsInBasket {
 
-	public static void main(String[] args) {
-
-	}
-
-	private static int totalFruit(int[] tree) {
+	public int totalFruit(int[] tree) {
 		Map<Integer, Integer> fruitsMap = new HashMap<Integer, Integer>();
 		int start = 0;
 		int maxFruits = 0;
