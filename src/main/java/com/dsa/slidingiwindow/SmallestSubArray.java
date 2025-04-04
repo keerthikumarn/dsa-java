@@ -2,12 +2,12 @@ package com.dsa.slidingiwindow;
 
 public class SmallestSubArray {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println(smallestSubArrayWithSum(new int[] { 7 }, 8));
 		System.out.println(smallestSubArrayWithSum(new int[] { 36 }, 23));
-	}
+	}*/
 
-	private static int smallestSubArrayWithSum(int arr[], int x) {
+	public int smallestSubArrayWithSum(int arr[], int x) {
 		int len = arr.length;
 		int minLen = len + 1;
 		for (int startPtr = 0; startPtr < len; startPtr++) {
