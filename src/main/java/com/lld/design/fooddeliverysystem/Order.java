@@ -3,7 +3,6 @@ package com.lld.design.fooddeliverysystem;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ddd.demo.OrderItem;
 
 public class Order {
 	private final String id;
