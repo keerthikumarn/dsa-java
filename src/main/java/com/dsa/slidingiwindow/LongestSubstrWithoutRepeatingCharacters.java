@@ -5,11 +5,11 @@ import java.util.Map;
 
 public class LongestSubstrWithoutRepeatingCharacters {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println(findLongestSubstrWithoutRepeatingCharacters("abcbbcbbkhlkkmnhhgbabfds"));
-	}
+	}*/
 
-	private static int findLongestSubstrWithoutRepeatingCharacters(String str) {
+	public int findLongestSubstrWithoutRepeatingCharacters(String str) {
 		Map<Character, Integer> charMap = new HashMap<>();
 		int maxLen = 0;
 		int ptr = 0;
