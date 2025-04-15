@@ -2,11 +2,7 @@ package com.dsa.leetcode.samples;
 
 public class RotateImage {
 
-	public static void main(String[] args) {
-		
-	}
-
-	private static void rotate(int[][] matrix) {
+	public void rotate(int[][] matrix) {
 		int len = matrix.length;
 		for (int iIdx = 0; iIdx < len; iIdx++) {
 			for (int jIdx = iIdx + 1; jIdx < len; jIdx++) {
@@ -21,7 +17,7 @@ public class RotateImage {
 		}
 	}
 
-	private static void reverseArray(int[] matrix) {
+	private void reverseArray(int[] matrix) {
 		int n = matrix.length;
 		for (int i = 0; i < n / 2; i++) {
 			int temp = matrix[i];
