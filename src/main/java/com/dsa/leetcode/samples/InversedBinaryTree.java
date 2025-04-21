@@ -2,11 +2,7 @@ package com.dsa.leetcode.samples;
 
 public class InversedBinaryTree {
 
-	public static void main(String[] args) {
-
-	}
-
-	private static TreeNode invertTree(TreeNode root) {
+	public TreeNode invertTree(TreeNode root) {
 		if (root == null) {
 			return null;
 		}
