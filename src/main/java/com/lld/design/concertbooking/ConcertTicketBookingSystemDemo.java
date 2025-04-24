@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConcertTicketBookingSystemDemo {
-	public static void run() {
+	public static void main(String[] args) {
 		ConcertTicketBookingSystem bookingSystem = ConcertTicketBookingSystem.getInstance();
 
 		List<Seat> concert1Seats = generateSeats(100);
