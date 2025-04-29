@@ -11,36 +11,31 @@ class TestCountVowels {
 	@Test
 	public void testAllVowels() {
 		String input = "aeiouAEIOU";
-		int result = counter.countVowels(input);
-		assertEquals(10, result);
+		assertEquals(10, counter.countVowels(input));
 	}
 
 	@Test
 	public void testNoVowels() {
 		String input = "bcdfg";
-		int result = counter.countVowels(input);
-		assertEquals(0, result);
+		assertEquals(0, counter.countVowels(input));
 	}
 
 	@Test
 	public void testMixedCharacters() {
 		String input = "Hello World";
-		int result = counter.countVowels(input);
-		assertEquals(3, result); // e, o, o
+		assertEquals(3, counter.countVowels(input));
 	}
 
 	@Test
 	public void testEmptyString() {
 		String input = "";
-		int result = counter.countVowels(input);
-		assertEquals(0, result);
+		assertEquals(0, counter.countVowels(input));
 	}
 
 	@Test
 	public void testUpperCaseOnly() {
 		String input = "XYZOU";
-		int result = counter.countVowels(input);
-		assertEquals(2, result); // O, U
+		assertEquals(2, counter.countVowels(input)); // O, U
 	}
 
 	@Test
