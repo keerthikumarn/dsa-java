@@ -11,11 +11,11 @@ public class BinaryTreeMirror {
 		root.right.left = new TreeNode(6);
 		root.right.right = new TreeNode(7);
 		convertToMirrorOfTree(root);
-		printTransformedTree(root);
+		//printTransformedTree(root);
 	}
 
-	private static void printTransformedTree(TreeNode root) {
-		/*printing the transformed/mirrored tree using preOrder traversal*/
+	/*private static void printTransformedTree(TreeNode root) {
+		//printing the transformed/mirrored tree using preOrder traversal
 		if (root == null) {
 			return;
 		}
@@ -23,7 +23,7 @@ public class BinaryTreeMirror {
 		printTransformedTree(root.left);
 		printTransformedTree(root.right);
 
-	}
+	}*/
 
 	private static void convertToMirrorOfTree(TreeNode root) {
 		if (root == null) {
