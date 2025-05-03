@@ -2,11 +2,11 @@ package com.dsa.leetcode.samples;
 
 public class GasStation {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println(canCompleteCircuit(new int[] { 1, 2, 3, 4, 5 }, new int[] { 3, 4, 5, 1, 2 }));
-	}
+	}*/
 
-	private static int canCompleteCircuit(int[] gas, int[] cost) {
+	public int canCompleteCircuit(int[] gas, int[] cost) {
 		int totalGas = 0;
 		int currGas = 0;
 		int totalCost = 0;
