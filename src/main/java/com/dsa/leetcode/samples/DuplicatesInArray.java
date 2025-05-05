@@ -8,14 +8,14 @@ import java.util.Map;
 
 public class DuplicatesInArray {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		List<Integer> resList = findDuplicates(Arrays.asList(12, 11, 40, 12, 5, 6, 5, 12, 11));
 		for (int num : resList) {
 			System.out.println(num);
 		}
-	}
+	}*/
 
-	private static List<Integer> findDuplicates(List<Integer> arr) {
+	public List<Integer> findDuplicates(List<Integer> arr) {
 		Map<Integer, Integer> freqMap = new HashMap<>();
 		for (int num : arr) {
 			freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
