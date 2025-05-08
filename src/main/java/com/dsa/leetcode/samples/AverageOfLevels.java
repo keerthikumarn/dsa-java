@@ -7,11 +7,7 @@ import java.util.Queue;
 
 public class AverageOfLevels {
 
-	public static void main(String[] args) {
-
-	}
-
-	private static List<Double> averageOfLevels(TreeNode root) {
+	public List<Double> averageOfLevels(TreeNode root) {
 		List<Double> avgs = new ArrayList<>();
 		if (root == null) {
 			return avgs;
@@ -36,5 +32,4 @@ public class AverageOfLevels {
 		}
 		return avgs;
 	}
-
 }
