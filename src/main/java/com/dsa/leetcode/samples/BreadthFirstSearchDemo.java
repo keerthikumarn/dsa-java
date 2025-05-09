@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class BreadthFirstSearchDemo {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		MyTree root = new MyTree(10);
 		MyTree newChild = root.addChild(5);
 		root.addChild(7);
@@ -19,10 +19,14 @@ public class BreadthFirstSearchDemo {
 		} else {
 			System.out.println("Found nothing!");
 		}
-	}
+	}*/
 
-	public static MyTree search(MyTree root, int value) {
+	public MyTree search(MyTree root, int value) {
 		Queue<MyTree> queue = new ArrayDeque<MyTree>();
+		if (root == null) {
+			System.out.println("The tree is empty.");
+			return null;
+		}
 		queue.add(root);
 		while (!queue.isEmpty()) {
 			for (MyTree node : queue) {
