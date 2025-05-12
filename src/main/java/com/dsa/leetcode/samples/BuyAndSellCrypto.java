@@ -2,11 +2,7 @@ package com.dsa.leetcode.samples;
 
 public class BuyAndSellCrypto {
 
-	public static void main(String[] args) {
-
-	}
-
-	private static int maxProfit(int[] stockPrices) {
+	public int maxProfit(int[] stockPrices) {
 		int right = 1;
 		int left = 0;
 		int maxProfit = 0;
