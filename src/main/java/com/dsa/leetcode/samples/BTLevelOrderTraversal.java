@@ -7,11 +7,7 @@ import java.util.List;
 
 public class BTLevelOrderTraversal {
 
-	public static void main(String[] args) {
-
-	}
-
-	private static List<List<Integer>> levelOrder(TreeNode root) {
+	public List<List<Integer>> levelOrder(TreeNode root) {
 		List<List<Integer>> result = new ArrayList<>();
 		Deque<TreeNode> dq = new ArrayDeque<>();
 		if (root != null) {
