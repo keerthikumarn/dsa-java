@@ -2,7 +2,7 @@ package com.dsa.leetcode.samples;
 
 public class JumpGame {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		int[] nums1 = new int[] { 2, 3, 1, 1, 4 };
 		int[] nums2 = new int[] { 0 };
 		int[] nums3 = new int[] { 3, 4, 3, 2, 5, 4, 3 };
@@ -12,9 +12,9 @@ public class JumpGame {
 		System.out.println(jump(nums1));
 		System.out.println(jump(nums3));
 		System.out.println(jump(nums4));
-	}
+	}*/
 
-	private static boolean canJump(int[] nums) {
+	public boolean canJump(int[] nums) {
 		if (nums.length == 0 || nums.length == 1 && nums[0] == 0) {
 			return true;
 		}
@@ -33,7 +33,7 @@ public class JumpGame {
 		return true;
 	}
 
-	private static int jump(int[] nums) {
+	public int jump(int[] nums) {
 		int len = nums.length;
 		if (len == 0 || len == 1 || nums[0] == 0) {
 			return 0;
