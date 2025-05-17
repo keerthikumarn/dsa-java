@@ -2,11 +2,7 @@ package com.dsa.leetcode.samples;
 
 public class JumpingOnClouds {
 
-	public static void main(String[] args) {
-
-	}
-
-	private static int jumpingOnClouds(int[] c, int k) {
+	public int jumpingOnClouds(int[] c, int k) {
 		int energyLevel = 100;
 		int len = c.length;
 		int index = 0;
