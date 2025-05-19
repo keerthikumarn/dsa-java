@@ -2,14 +2,14 @@ package com.dsa.leetcode.samples;
 
 public class FirstAndLastPositionElementArray {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println(searchRange(new int[] { 5, 7, 7, 8, 8, 10 }, 8));
 		System.out.println(searchRange(new int[] { 5, 7, 7, 8, 8, 10 }, 6));
 		System.out.println(searchRangeLogN(new int[] { 5, 7, 7, 8, 8, 10 }, 8));
 		System.out.println(searchRangeLogN(new int[] { 5, 7, 7, 8, 8, 10 }, 6));
-	}
+	}*/
 
-	private static int[] searchRangeLogN(int[] nums, int target) {
+	public int[] searchRangeLogN(int[] nums, int target) {
 		int[] result = new int[2];
 		result[0] = findElementIndex(nums, target, true);
 		result[1] = findElementIndex(nums, target, false);
@@ -17,7 +17,7 @@ public class FirstAndLastPositionElementArray {
 		return result;
 	}
 	
-	private static int findElementIndex(int[] nums, int target, boolean findLeft) {
+	private int findElementIndex(int[] nums, int target, boolean findLeft) {
 	    int left = 0;
 	    int right = nums.length - 1;
 	    int index = -1;
@@ -39,7 +39,7 @@ public class FirstAndLastPositionElementArray {
 	    return index;
 	}
 
-	private static int findLeftElementIndex(int[] nums, int target) {
+	/*private static int findLeftElementIndex(int[] nums, int target) {
 		int left = 0;
 		int right = nums.length - 1;
 		int firstIndex = -1;
@@ -55,9 +55,9 @@ public class FirstAndLastPositionElementArray {
 			}
 		}
 		return firstIndex;
-	}
+	}*/
 
-	private static int findRightElementIndex(int[] nums, int target) {
+	/*private static int findRightElementIndex(int[] nums, int target) {
 		int left = 0;
 		int right = nums.length - 1;
 		int lastIndex = -1;
@@ -73,10 +73,10 @@ public class FirstAndLastPositionElementArray {
 			}
 		}
 		return lastIndex;
-	}
+	}*/
 
 	/* Brute Force Approach */
-	private static int[] searchRange(int[] nums, int target) {
+	/*private static int[] searchRange(int[] nums, int target) {
 		int start = -1;
 		int end = -1;
 		for (int idx = 0; idx < nums.length; idx++) {
@@ -88,6 +88,6 @@ public class FirstAndLastPositionElementArray {
 			}
 		}
 		return new int[] { start, end };
-	}
+	}*/
 
 }
