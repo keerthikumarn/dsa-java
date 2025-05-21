@@ -4,11 +4,11 @@ import java.util.PriorityQueue;
 
 public class LastStoneWeight {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println(lastStoneWeight(new int[] { 2, 3, 6, 2, 4 }));
-	}
+	}*/
 
-	private static int lastStoneWeight(int[] stones) {
+	public int lastStoneWeight(int[] stones) {
 		PriorityQueue<Integer> queue = new PriorityQueue<>();
 		for (int stone : stones) {
 			queue.offer(-stone);
