@@ -5,11 +5,7 @@ import java.util.List;
 
 public class LeafSimilarInTree {
 
-	public static void main(String[] args) {
-
-	}
-
-	private static boolean leafSimilar(TreeNode root1, TreeNode root2) {
+	public boolean leafSimilar(TreeNode root1, TreeNode root2) {
 		if (root1 == null || root2 == null) {
 			return false;
 		}
@@ -28,7 +24,7 @@ public class LeafSimilarInTree {
 		return true;
 	}
 
-	private static void getLeafNodes(TreeNode root, List<Integer> list) {
+	private void getLeafNodes(TreeNode root, List<Integer> list) {
 		if (root == null) {
 			return;
 		}
