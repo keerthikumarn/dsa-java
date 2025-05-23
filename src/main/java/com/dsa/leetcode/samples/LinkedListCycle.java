@@ -2,11 +2,7 @@ package com.dsa.leetcode.samples;
 
 public class LinkedListCycle {
 
-	public static void main(String[] args) {
-
-	}
-
-	private static boolean hasCycle(ListNode head) {
+	public boolean hasCycle(ListNode head) {
 		/* 2 pointer approach */
 		ListNode slowPtr = head;
 		ListNode fastPtr = head;
