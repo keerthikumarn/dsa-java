@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.apache.poi.ss.formula.functions.T;
 
-public class CacheDetails {
+public class CacheDetails<T> {
 
 	private List<T> list;
 	private LocalDateTime lastAccessTime;
