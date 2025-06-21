@@ -5,16 +5,17 @@ import java.util.List;
 
 public class Permutations {
 
-	public static List<List<Integer>> permute(int[] nums) {
-		if (nums == null || nums.length == 0) {
-			return new ArrayList<>();
-		}
+	public List<List<Integer>> permute(int[] nums) {
 		List<List<Integer>> result = new ArrayList<>();
+		if (nums == null || nums.length == 0) {
+			result.add(new ArrayList<>()); 
+			return result;
+		}
 		traceBack(result, new ArrayList<>(), nums);
 		return result;
 	}
 
-	private static void traceBack(List<List<Integer>> result, List<Integer> currList, int[] nums) {
+	private void traceBack(List<List<Integer>> result, List<Integer> currList, int[] nums) {
 		if (currList.size() == nums.length) {
 			result.add(new ArrayList<>(currList));
 			return;
