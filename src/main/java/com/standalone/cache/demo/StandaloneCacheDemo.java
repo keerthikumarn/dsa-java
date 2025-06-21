@@ -44,7 +44,7 @@ public class StandaloneCacheDemo {
 		try {
 			if (!executorService.awaitTermination(60, TimeUnit.SECONDS)) {
 				executorService.shutdownNow();
-				if (!executorService.awaitTermination(60, TimeUnit.SECONDS)) {
+				if (!executorService.awaitTermination(10, TimeUnit.SECONDS)) {
 					System.err.println("ExecutorService did not terminate");
 				}
 			}
