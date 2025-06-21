@@ -47,9 +47,9 @@ public class CacheObject<T> {
 	private void removeLeastRecentlyUsed() {
 		lock.writeLock().lock();
 		try {
-			if (cache.isEmpty())
+			if (cache.isEmpty()) {
 				return;
-
+			}
 			Integer lruKey = null;
 			LocalDateTime oldestTime = null;
 			for (Map.Entry<Integer, CacheDetails<T>> entry : cache.entrySet()) {
