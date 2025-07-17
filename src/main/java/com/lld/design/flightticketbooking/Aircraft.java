@@ -1,25 +1,14 @@
 package com.lld.design.flightticketbooking;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Aircraft {
-	private final String tailNumber;
-	private final String model;
-	private final int totalSeats;
-
-	public Aircraft(String tailNumber, String model, int totalSeats) {
-		this.tailNumber = tailNumber;
-		this.model = model;
-		this.totalSeats = totalSeats;
-	}
-
-	public String getTailNumber() {
-		return tailNumber;
-	}
-
-	public String getModel() {
-		return model;
-	}
-
-	public int getTotalSeats() {
-		return totalSeats;
-	}
+	private String tailNumber;
+	private String model;
+	private int totalSeats;
 }
