@@ -26,5 +26,11 @@ public class AirlineManagementSystem {
         passengers.put(passenger.getId(), passenger);
         return passenger;
     }
+	
+	public Aircraft addAircraft(String tailNumber, String model, int totalSeats) {
+        Aircraft aircraft = new Aircraft(tailNumber, model, totalSeats);
+        aircrafts.put(tailNumber, aircraft);
+        return aircraft;
+    }
 
 }
