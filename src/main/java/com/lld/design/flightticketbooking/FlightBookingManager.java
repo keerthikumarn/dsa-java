@@ -38,12 +38,11 @@ public class FlightBookingManager {
 
 	public void cancelBooking(String bookingNumber) {
 		synchronized (lock) {
-			FlightBooking booking = bookings.stream()
-			        .filter(b -> b.getId().equals(bookingId))
-			        .findFirst()
-			        .orElseThrow(() -> new IllegalArgumentException("Booking not found or already canceled"));
-
-			    bookings.remove(booking);
+			FlightBooking booking = bookings.get(bookingNumber);
+			if (booking != null) {
+				booking.cancelBooking();
+				;
+			}
 		}
 	}
 
