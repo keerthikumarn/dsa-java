@@ -33,8 +33,7 @@ public class AirlineManagementSystem {
 	public Flight addFlight(String source, String destination, LocalDateTime departure, LocalDateTime arrival,
 			String aircraftNumber) {
 		Aircraft aircraft = aircrafts.get(aircraftNumber);
-		Flight flight = new Flight(source, destination, aircraftNumber, departure, arrival, null, aircraft, null, null);
-		flights.put(flight.getFlightNumber(), flight);
+		Flight flight = new Flight(source, destination, departure, arrival, FlightStatus.ONTIME, aircraft);
 		flightSearch.addFlight(flight);
 		return flight;
 	}

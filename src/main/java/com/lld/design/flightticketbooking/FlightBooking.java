@@ -28,4 +28,8 @@ public class FlightBooking {
     	this.status = FlightBookingStatus.CANCELLED;
     	seat.release();
     }
+    
+	public String getId() {
+		return id;
+	}
 }
