@@ -21,7 +21,7 @@ public class FlightSearch {
 		return flights.stream()
 				.filter(flight -> flight.getSource().equalsIgnoreCase(source)
 						&& flight.getDestination().equalsIgnoreCase(destination)
-						&& flight.getDepartureTime().equals(date))
+						&& flight.getDepartureTime().toLocalDate().equals(date))
 				.collect(Collectors.toList());
 	}
 
