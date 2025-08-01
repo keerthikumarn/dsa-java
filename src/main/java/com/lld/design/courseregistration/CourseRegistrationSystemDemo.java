@@ -35,6 +35,5 @@ public class CourseRegistrationSystemDemo {
 	        courseRegistrationSystem.getAvailableCourses().forEach(c ->
 	                System.out.println("Available: " + c.getName()));
 	    }
-	}
 
 }
