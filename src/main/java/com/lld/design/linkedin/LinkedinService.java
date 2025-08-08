@@ -40,6 +40,16 @@ public class LinkedinService {
 		}
 		return null;
 	}
+	
+	public List<User> searchUsers(String keyword) {
+        List<User> results = new ArrayList<>();
+        for (User user : users.values()) {
+            if (user.getName().contains(keyword)) {
+                results.add(user);
+            }
+        }
+        return results;
+    }
 
 	public void sendConnectionRequest(User sender, User receiver) {
 		if (sender == null || receiver == null) {
@@ -49,6 +59,21 @@ public class LinkedinService {
 		receiver.getConnections().add(connection);
 		sendNotification(receiver, NotificationType.CONNECTION_REQUEST,
 				"New connection request from " + sender.getName());
+	}
+
+	public void acceptConnectionRequest(User user, User connectionUser) {
+		for (Connection connection : user.getConnections()) {
+			if (connection.getUser().equals(connectionUser)) {
+				user.getConnections().add(new Connection(connectionUser, new Timestamp(System.currentTimeMillis())));
+				break;
+			}
+		}
+	}
+
+	public JobPosting postJobListing(String title, String company, String description, String location) {
+		JobPosting jobPosting = new JobPosting(title, company, description, location);
+		jobPostings.put(jobPosting.getId(), jobPosting);
+		return jobPosting;
 	}
 
 	public List<JobPosting> searchJobPostings(String keyword) {
