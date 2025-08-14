@@ -29,5 +29,40 @@ public class ParkingSpot {
 	public boolean isOccupied() {
 		return isOccupied;
 	}
+	
+	public synchronized void parkVehicle(Vehicle vehicle) {
+		if (isOccupied) {
+			throw new IllegalStateException("Parking spot is already occupied");
+		}
+		if (vehicle.getSize() != spotSize) {
+			throw new IllegalArgumentException("Vehicle size does not match parking spot size");
+		}
+		this.parkedVehicle = vehicle;
+		this.isOccupied = true;
+	}
+	
+	public synchronized void removeVehicle() {
+		if (!isOccupied) {
+			throw new IllegalStateException("Parking spot is already empty");
+		}
+		this.parkedVehicle = null;
+		this.isOccupied = false;
+	}
+	
+	public boolean canFitVehicle(Vehicle vehicle) {
+		if (isOccupied) return false;
+
+        switch (vehicle.getSize()) {
+            case SMALL:
+                return spotSize == VehicleSize.SMALL;
+            case MEDIUM:
+                return spotSize == VehicleSize.MEDIUM || spotSize == VehicleSize.LARGE;
+            case LARGE:
+                return spotSize == VehicleSize.LARGE;
+            default:
+                return false;
+        }
+    }
+}}
 
 }
