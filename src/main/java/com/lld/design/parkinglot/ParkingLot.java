@@ -3,6 +3,7 @@ package com.lld.design.parkinglot;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ParkingLot {
@@ -33,4 +34,19 @@ public class ParkingLot {
 	public void setParkingStrategy(Parking parkingStrategy) {
 		this.parkingStrategy = parkingStrategy;
 	}
+	
+	public Optional<ParkingTicket> parkVehicle(Vehicle vehicle) {
+		Optional<ParkingSpot> availableSpot = parkingStrategy.findSpot(floors, vehicle);
+		if (availableSpot.isPresent()) {
+			ParkingSpot spot = availableSpot.get();
+            spot.parkVehicle(vehicle);
+            ParkingTicket ticket = new ParkingTicket(vehicle, spot);
+            activeTickets.put(vehicle.getPlateNumber(), ticket);
+            System.out.printf("%s Parked at %s. Ticket: %s\n", vehicle.getPlateNumber(), spot.getSpotId(), ticket.getTicketId());
+            return Optional.of(ticket);
+		}
+		System.out.println("No available parking space for " + vehicle.getPlateNumber());
+		return Optional.empty();
+	}
+	
 }
