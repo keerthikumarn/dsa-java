@@ -49,4 +49,17 @@ public class ParkingLot {
 		return Optional.empty();
 	}
 	
+	public Optional<Double> unparkVehicle(String licenseNumber) {
+        ParkingTicket ticket = activeTickets.remove(licenseNumber);
+        if (ticket == null) {
+            System.out.println("Ticket not found");
+            return Optional.empty();
+        }
+        ticket.setExitTimestamp();
+        ticket.getSpot().removeVehicle();
+        activeTickets.remove(ticket.getTicketId());
+        Double parkingFee = feeStrategy.calculateFee(ticket);
+        return Optional.of(parkingFee);
+    }
+	
 }
