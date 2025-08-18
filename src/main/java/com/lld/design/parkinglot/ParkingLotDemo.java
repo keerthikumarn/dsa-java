@@ -1,5 +1,7 @@
 package com.lld.design.parkinglot;
 
+import java.util.Optional;
+
 public class ParkingLotDemo {
 
 	public static void main(String[] args) {
@@ -24,8 +26,27 @@ public class ParkingLotDemo {
 		System.out.println("\n--- Vehicle Entries ---");
 		floor1.displayAvailability();
 		floor2.displayAvailability();
-		
-		
+
+		Vehicle bike = new Bike("KA05 NB 4321");
+		Vehicle car = new Car("KA01 HG 3456");
+		Vehicle lorry = new Lorry("KA41 KJ 3309");
+
+		Optional<ParkingTicket> bikeTicket = parkingLot.parkVehicle(bike);
+		Optional<ParkingTicket> carTicket = parkingLot.parkVehicle(car);
+		Optional<ParkingTicket> lorryTicket = parkingLot.parkVehicle(lorry);
+
+		// 3. Display parking status
+		System.out.println("\n--- Availability after parking ---");
+		floor1.displayAvailability();
+		floor2.displayAvailability();
+
+		// 3. Simulate another car entry (should go to floor 2)
+		Vehicle car2 = new Car("KA41 LK 2233");
+		Optional<ParkingTicket> car2TicketOpt = parkingLot.parkVehicle(car2);
+
+		// 4. Simulate a vehicle entry that fails (no available spots)
+		Vehicle bike2 = new Bike("KA05 BG 5644");
+		Optional<ParkingTicket> failedBikeTicketOpt = parkingLot.parkVehicle(bike2);
 
 	}
 
