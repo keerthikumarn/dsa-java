@@ -48,6 +48,17 @@ public class ParkingLotDemo {
 		Vehicle bike2 = new Bike("KA05 BG 5644");
 		Optional<ParkingTicket> failedBikeTicketOpt = parkingLot.parkVehicle(bike2);
 
+		 // 5. Simulate vehicle exits and fee calculation
+        System.out.println("\n--- Vehicle Exits ---");
+
+        if (carTicket.isPresent()) {
+            Optional<Double> feeOpt = parkingLot.unparkVehicle(car.getPlateNumber());
+            feeOpt.ifPresent(fee -> System.out.printf("Car C-456 unparked. Fee: $%.2f\n", fee));
+        }
+
+        System.out.println("\n--- Availability after one car leaves ---");
+        floor1.displayAvailability();
+        floor2.displayAvailability();
 	}
 
 }
