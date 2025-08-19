@@ -53,7 +53,7 @@ public class ParkingLotDemo {
 
         if (carTicket.isPresent()) {
             Optional<Double> feeOpt = parkingLot.unparkVehicle(car.getPlateNumber());
-            feeOpt.ifPresent(fee -> System.out.printf("Car C-456 unparked. Fee: $%.2f\n", fee));
+            feeOpt.ifPresent(fee -> System.out.printf("Car KA41 LK 2233 unparked. Fee: $%.2f\n", fee));
         }
 
         System.out.println("\n--- Availability after one car leaves ---");
