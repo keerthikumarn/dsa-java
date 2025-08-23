@@ -9,14 +9,19 @@ public class FarthestFitParking implements Parking {
 
 	@Override
 	public Optional<ParkingSpot> findSpot(List<ParkingFloor> floors, Vehicle vehicle) {
-		List<ParkingFloor> reversedFloors = new ArrayList<>(floors);
-		Collections.reverse(reversedFloors);
-		for (ParkingFloor floor : reversedFloors) {
+		if (floors == null || vehicle == null) {
+			return Optional.empty();
+		}
+
+		// Iterate over the floors in reverse order directly
+		for (int idx = floors.size() - 1; idx >= 0; idx--) {
+			ParkingFloor floor = floors.get(idx);
 			Optional<ParkingSpot> spot = floor.findAvailableSpot(vehicle);
 			if (spot.isPresent()) {
 				return spot;
 			}
 		}
+
 		return Optional.empty();
 	}
 }
