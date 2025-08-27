@@ -1,6 +1,7 @@
 package com.lld.design.restaurantmanagement;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class OrderItem {
 
@@ -19,8 +20,21 @@ public class OrderItem {
 		this.orderItemState = newState;
 		System.out.println("Item '" + menuItem.getName() + "' state changed to: " + newState.getStatus());
 	}
-	
+
 	public void nextState() {
 		this.orderItemState.next(this);
 	}
+
+	public void setState(OrderItemState orderItemState) {
+		this.orderItemState = orderItemState;
+	}
+
+	public void addObserver(OrderObserver observer) {
+		this.observers.add(observer);
+	}
+	
+	public void notifyObservers() {
+		new ArrayList<>(observers).forEach(observer -> observer.update(this));
+	}
+	
 }
