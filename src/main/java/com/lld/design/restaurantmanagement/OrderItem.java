@@ -13,7 +13,7 @@ public class OrderItem {
 	public OrderItem(MenuItem menuItem, Order order) {
 		this.menuItem = menuItem;
 		this.order = order;
-		this.state = new OrderedState();
+		this.orderItemState = new OrderedState();
 	}
 
 	public void changeState(OrderItemState newState) {
@@ -37,4 +37,11 @@ public class OrderItem {
 		new ArrayList<>(observers).forEach(observer -> observer.update(this));
 	}
 	
+	public MenuItem getMenuItem() {
+		return menuItem;
+	}
+	
+	public Order getOrder() {
+		return order;
+	}
 }
