@@ -24,6 +24,9 @@ public class RestaurantManagementSystemFacade {
 	}
 
 	public Table addTable(int tableId, int capacity) {
+		if (capacity <= 0) {
+			throw new IllegalArgumentException("Capacity must be greater than 0");
+		}
 		Table table = new Table(tableId, capacity);
 		restaurant.addTable(table);
 		return table;
@@ -42,6 +45,9 @@ public class RestaurantManagementSystemFacade {
 	}
 
 	public MenuItem addMenuItem(String id, String name, double price) {
+		if (price < 0) {
+			throw new IllegalArgumentException("Price cannot be negative");
+		}
 		MenuItem item = new MenuItem(id, name, price);
 		restaurant.getMenu().addItem(item);
 		return item;
