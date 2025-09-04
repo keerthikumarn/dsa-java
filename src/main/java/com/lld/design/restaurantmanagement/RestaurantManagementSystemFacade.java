@@ -1,6 +1,7 @@
 package com.lld.design.restaurantmanagement;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -51,6 +52,26 @@ public class RestaurantManagementSystemFacade {
 		MenuItem item = new MenuItem(id, name, price);
 		restaurant.getMenu().addItem(item);
 		return item;
+	}
+
+	public Order takeOrder(int tableId, int waiterId, List<String> menuItemIds) {
+		Waiter waiter = restaurant.getWaiter(waiterId);
+		if (waiter == null) {
+			throw new IllegalArgumentException("Invalid waiter ID");
+		}
+		Chef chef = restaurant.getAllChefs().stream().findFirst()
+				.orElseThrow(() -> new IllegalStateException("No chefs available"));
+		Order order = new Order(orderIdCounter.getAndIncrement(), tableId);
+		for (String itemId : menuItemIds) {
+			MenuItem menuItem = restaurant.getMenu().getMenuItem(itemId);
+			OrderItem orderItem = new OrderItem(menuItem, order);
+			orderItem.addObserver(waiter);
+			order.addItem(orderItem);
+		}
+		Command prepareOrderCommand = new PrepareOrderCommand(order, chef);
+		prepareOrderCommand.execute();
+		orders.put(order.getOrderId(), order);
+		return order;
 	}
 
 }
