@@ -24,6 +24,11 @@ public class RestaurantManagementSystemFacade {
 		return instance;
 	}
 
+	public void reset() {
+		orders.clear();
+		orderIdCounter = new AtomicInteger(1);
+	}
+
 	public Table addTable(int tableId, int capacity) {
 		if (capacity <= 0) {
 			throw new IllegalArgumentException("Capacity must be greater than 0");
