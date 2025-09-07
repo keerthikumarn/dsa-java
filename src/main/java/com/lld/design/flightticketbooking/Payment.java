@@ -12,8 +12,14 @@ public class Payment {
 	private String paymentMethod;
 	private double amount;
 	private PaymentStatus status;
-	
-	public void processPayment() {
-		status = PaymentStatus.COMPLETED;
+
+	public boolean processPayment(double paymentAmount) {
+		if (this.amount >= paymentAmount) {
+			this.status = PaymentStatus.COMPLETED;
+			return true;
+		} else {
+			this.status = PaymentStatus.FAILED;
+			return false;
+		}
 	}
 }
