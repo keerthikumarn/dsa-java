@@ -12,7 +12,7 @@ public class RestaurantManagementSystem {
 
 	private static RestaurantManagementSystem instance;
 	private Map<String, MenuItem> menu;
-	private Map<String, Order> orders;
+	private Map<Integer, Order> orders;
 	private Map<Integer, Payment> payments;
 	private List<Staff> staff;
 	private Map<Integer, Table> tables;
@@ -59,4 +59,52 @@ public class RestaurantManagementSystem {
 		return table;
 	}
 
+	public Order placeOrder(int tableId, List<OrderItem> items) {
+		Table table = tables.get(tableId);
+		if (table == null || !table.isAvailable()) {
+			throw new IllegalStateException("Table not reserved or invalid");
+		}
+		Order order = new Order(table.getTableId(), items);
+		orders.put(order.getOrderId(), order);
+		return order;
+	}
+
+	public void markOrderPreparing(String orderId) {
+		Order order = orders.get(orderId);
+		notifyKitchen(order);
+	}
+
+	public Bill getBill(String orderId) {
+		Order order = orders.get(orderId);
+		if (order.getStatus() == OrderStatus.PAID) {
+			throw new IllegalStateException("Order already paid");
+		}
+		order.markPaid();
+		return new Bill(order.getOrderId(), order.getTotalAmount());
+	}
+
+	public void makePayment(Bill bill, Payment payment) {
+		Order order = orders.get(bill.getOrderId());
+		if (payment.processPayment(bill.getTotalAmount())) {
+			bill.markPaymentCompleted();
+			order.markPaid();
+		} else {
+			bill.markPaymentFailed();
+			throw new RuntimeException("Payment failed for the orderId: " + order.getOrderId());
+		}
+	}
+
+	public void markOrderReady(String orderId) {
+		Order order = orders.get(orderId);
+		order.markReady();
+		notifyStaff(order);
+	}
+
+	private void notifyStaff(Order order) {
+		System.out.println("Staff notified about order ID: " + order.getOrderId());
+	}
+
+	private void notifyKitchen(Order order) {
+		System.out.println("Kitchen notified about order ID: " + order.getOrderId());
+	}
 }
