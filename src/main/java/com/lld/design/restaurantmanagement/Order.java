@@ -7,19 +7,26 @@ public class Order {
 
 	private int orderId;
 	private int tableId;
-	private List<OrderItem> items = new ArrayList<>();
+	private List<OrderItem> orderItems = new ArrayList<>();
+	private boolean isReady = false;
+	private OrderStatus status = OrderStatus.NEW;
 
 	public Order(int orderId, int tableId) {
 		this.orderId = orderId;
 		this.tableId = tableId;
 	}
 
+	public Order(int tableId, List<OrderItem> orderItems) {
+		this.tableId = tableId;
+		this.orderItems = orderItems;
+	}
+
 	public void addItem(OrderItem item) {
-		this.items.add(item);
+		this.orderItems.add(item);
 	}
 
 	public double getTotalAmount() {
-		return items.stream().mapToDouble(item -> item.getMenuItem().getPrice()).sum();
+		return orderItems.stream().mapToDouble(item -> item.getMenuItem().getPrice()).sum();
 	}
 
 	public int getOrderId() {
@@ -31,7 +38,24 @@ public class Order {
 	}
 
 	public List<OrderItem> getOrderItems() {
-		return items;
+		return orderItems;
+	}
+
+	public void markReady() {
+		this.isReady = true;
+		this.status = OrderStatus.READY;
+	}
+	
+	public void markPaid() {
+        this.status = OrderStatus.PAID;
+    }
+
+	public boolean isReady() {
+		return isReady;
+	}
+
+	public OrderStatus getStatus() {
+		return status;
 	}
 
 }
