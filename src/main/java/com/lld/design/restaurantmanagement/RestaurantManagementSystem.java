@@ -12,7 +12,7 @@ public class RestaurantManagementSystem {
 
 	private static RestaurantManagementSystem instance;
 	private Map<String, MenuItem> menu;
-	private Map<Integer, Order> orders;
+	Map<Integer, Order> orders;
 	private Map<Integer, Payment> payments;
 	private List<Staff> staff;
 	private Map<Integer, Table> tables;
@@ -85,6 +85,9 @@ public class RestaurantManagementSystem {
 
 	public void makePayment(Bill bill, Payment payment) {
 		Order order = orders.get(bill.getOrderId());
+		if (order == null) {
+			throw new IllegalArgumentException("Order not found for the given bill");
+		}
 		if (payment.processPayment(bill.getTotalAmount())) {
 			bill.markPaymentCompleted();
 			order.markPaid();
