@@ -84,6 +84,12 @@ public class RestaurantManagementSystem {
 	}
 
 	public void makePayment(Bill bill, Payment payment) {
+		if (bill == null) {
+			throw new NullPointerException("Bill cannot be null");
+		}
+		if (payment == null) {
+			throw new NullPointerException("Payment cannot be null");
+		}
 		Order order = orders.get(bill.getOrderId());
 		if (order == null) {
 			throw new IllegalArgumentException("Order not found for the given bill");
@@ -93,7 +99,7 @@ public class RestaurantManagementSystem {
 			order.markPaid();
 		} else {
 			bill.markPaymentFailed();
-			throw new RuntimeException("Payment failed for the orderId: " + order.getOrderId());
+			throw new IllegalStateException("Insufficient payment amount");
 		}
 	}
 
