@@ -41,17 +41,6 @@ class TestRestaurantManagementSystem {
 		verify(order).markPaid();
 	}
 
-	@DisplayName("makePayment should throw RuntimeException when processPayment returns false")
-	@Test
-	void makePaymentThrowsExceptionOnFailedPayment() {
-		when(payment.processPayment(100.0)).thenReturn(false);
-		RuntimeException exception = assertThrows(RuntimeException.class,
-				() -> restaurantManagementSystem.makePayment(bill, payment));
-		assertEquals("Payment failed for the orderId: 1", exception.getMessage());
-		verify(bill).markPaymentFailed();
-		verify(order, never()).markPaid();
-	}
-
 	@DisplayName("makePayment should throw IllegalArgumentException when order is not found")
 	@Test
 	void makePaymentThrowsExceptionWhenOrderNotFound() {
@@ -59,6 +48,33 @@ class TestRestaurantManagementSystem {
 		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
 				() -> restaurantManagementSystem.makePayment(bill, payment));
 		assertEquals("Order not found for the given bill", exception.getMessage());
+	}
+
+	@DisplayName("makePayment should throw NullPointerException when bill is null")
+	@Test
+	void makePaymentThrowsExceptionWhenBillIsNull() {
+		NullPointerException exception = assertThrows(NullPointerException.class,
+				() -> restaurantManagementSystem.makePayment(null, payment));
+		assertEquals("Bill cannot be null", exception.getMessage());
+	}
+
+	@DisplayName("makePayment should throw NullPointerException when payment is null")
+	@Test
+	void makePaymentThrowsExceptionWhenPaymentIsNull() {
+		NullPointerException exception = assertThrows(NullPointerException.class,
+				() -> restaurantManagementSystem.makePayment(bill, null));
+		assertEquals("Payment cannot be null", exception.getMessage());
+	}
+
+	@DisplayName("makePayment should throw IllegalStateException when payment amount is insufficient")
+	@Test
+	void makePaymentThrowsExceptionWhenPaymentAmountIsInsufficient() {
+		when(payment.processPayment(100.0)).thenReturn(false);
+		when(payment.getAmount()).thenReturn(50.0);
+
+		IllegalStateException exception = assertThrows(IllegalStateException.class,
+				() -> restaurantManagementSystem.makePayment(bill, payment));
+		assertEquals("Insufficient payment amount", exception.getMessage());
 	}
 
 }
