@@ -46,6 +46,4 @@ public class Table {
 	public boolean isAvailable() {
 		return this.status == TableStatus.AVAILABLE;
 	}
-	}
-
 }
