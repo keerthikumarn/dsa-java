@@ -16,6 +16,7 @@ public class MarkAndToys {
 			} else {
 				break;
 			}
+		}
 		return toyCount;
 	}
 
